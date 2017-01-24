@@ -43,13 +43,13 @@ write.csv(tas, file="data/grade_data.csv", row.names = FALSE)
 #################
 
 #Read in the life_expectancy.csv file found in the data/ directory. Store it into a variable called life.expectancy. You may also want to use RStudio to View() it to learn about its rows and columns.
-life.expectancy<-read.csv(file="data/life_expectancy.csv")
+life.expectancy<-read.csv(file="data/life_expectancy.csv", stringsAsFactors = FALSE)
 
 #Add a column called change to the data frame that is the change in life expectancy from 1960 to 2013.
 life.expectancy$change<-life.expectancy$le_2013 - life.expectancy$le_1960
 
 #Create a variable num.small.gain that has the number of countries whose life expectancy has improved fewer than 5 years between 1960 and 2013. Print out this variable
-num.small.gain<-length(life.expectancy[life.expectancy$change>5, "country"])
+num.small.gain<-length(life.expectancy[life.expectancy$change<5, "country"])
 print(num.small.gain)
 
 #Create a variable most.improved that is the name of the country with the largest gain in life expectancy. Print out this variable.
