@@ -108,7 +108,7 @@ titanic.data<-data.frame(Titanic)
 
 #Create a variable children that are the rows of the data frame with information about children on the Titanic.
 children<- titanic.data[titanic.data$Age == "Child", ]
-View(titanic.data)
+
 #Create a variable children.num that is the total number of children on the Titanic. 
 children.num<- sum(titanic.data[titanic.data$Age == "Child", "Freq"])
 print(children.num)
